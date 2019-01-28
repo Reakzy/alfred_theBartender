@@ -9,7 +9,7 @@ void initBody()
 // Turn at 0°
 void frontBody()
 {
-  for (uint16_t pulselen = SERVOMAX_BODY; pulselen > SERVOMIN_BODY; pulselen--) {
+  for (uint16_t pulselen = bodyAnglePulse; pulselen > SERVOMIN_BODY; pulselen--) {
     pwm.setPWM(BODY_PIN, 0, pulselen);
     bodyAnglePulse = pulselen;
   }
@@ -20,7 +20,7 @@ void frontBody()
 // Turn at 180°
 void backBody()
 {
-  for (uint16_t pulselen = SERVOMIN_BODY; pulselen < SERVOMAX_BODY; pulselen++) {
+  for (uint16_t pulselen = bodyAnglePulse; pulselen < SERVOMAX_BODY; pulselen++) {
     pwm.setPWM(BODY_PIN, 0, pulselen);
     bodyAnglePulse = pulselen;
   }

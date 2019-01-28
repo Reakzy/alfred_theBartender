@@ -10,7 +10,7 @@ void initShoulder()
 // Turn at 0°
 void upShoulder()
 {
-  for (uint16_t pulselen = SERVOMAX_SHOULDER; pulselen > SERVOMIN_SHOULDER; pulselen--) {
+  for (uint16_t pulselen = shoulderAnglePulse; pulselen > SERVOMIN_SHOULDER; pulselen--) {
     pwm.setPWM(SHOULDER_PIN, 0, pulselen);
     shoulderAnglePulse = pulselen;
   }
@@ -21,7 +21,7 @@ void upShoulder()
 // Turn at 100° because with more he can't stand up
 void downShoulder()
 {
-  for (uint16_t pulselen = SERVOMIN_SHOULDER; pulselen < SERVOMAX_SHOULDER; pulselen++) {
+  for (uint16_t pulselen = shoulderAnglePulse; pulselen < SERVOMAX_SHOULDER; pulselen++) {
     pwm.setPWM(SHOULDER_PIN, 0, pulselen);
     shoulderAnglePulse = pulselen;
   }

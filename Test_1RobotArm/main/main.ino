@@ -17,8 +17,6 @@
   BSD license, all text above must be included in any redistribution
  ****************************************************/
 
-#include <Wire.h>
-#include <Adafruit_PWMServoDriver.h>
 #include "Main.h"
 
 // called this way, it uses the default address 0x40
@@ -48,8 +46,7 @@ void setup() {
 
   setupArm();
   delay(1000);
-  downShoulder();
-  downElbow(); 
+  takeCup();
 }
 
 void loop() {

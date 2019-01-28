@@ -10,7 +10,7 @@ void initWrist()
 // Turn at 0°
 void leftWrist()
 {
-  for (uint16_t pulselen = SERVOMAX_WRIST; pulselen > SERVOMIN_WRIST; pulselen--) {
+  for (uint16_t pulselen = wristAnglePulse; pulselen > SERVOMIN_WRIST; pulselen--) {
     pwm.setPWM(WRIST_PIN, 0, pulselen);
     wristAnglePulse = pulselen;
   }
@@ -21,7 +21,7 @@ void leftWrist()
 // Turn at 180°
 void rightWrist()
 {
-  for (uint16_t pulselen = SERVOMIN_WRIST; pulselen < SERVOMAX_WRIST; pulselen++) {
+  for (uint16_t pulselen = wristAnglePulse; pulselen < SERVOMAX_WRIST; pulselen++) {
     pwm.setPWM(WRIST_PIN, 0, pulselen);
     wristAnglePulse = pulselen;
   }

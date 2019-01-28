@@ -9,7 +9,7 @@ void initElbow()
 // Turn at 0°
 void upElbow()
 {
-  for (uint16_t pulselen = SERVOMAX_ELBOW; pulselen > SERVOMIN_ELBOW; pulselen--) {
+  for (uint16_t pulselen = elbowAnglePulse; pulselen > SERVOMIN_ELBOW; pulselen--) {
     pwm.setPWM(ELBOW_PIN, 0, pulselen);
     elbowAnglePulse = pulselen;
   }
@@ -24,7 +24,7 @@ void upElbow()
 void downElbow()
 {
   if (SERVOMIN_SHOULDER + 50 <= shoulderAnglePulse) {
-    for (uint16_t pulselen = SERVOMIN_ELBOW; pulselen < SERVOMAX_ELBOW; pulselen++) {
+    for (uint16_t pulselen = elbowAnglePulse; pulselen < SERVOMAX_ELBOW; pulselen++) {
       pwm.setPWM(ELBOW_PIN, 0, pulselen);
       elbowAnglePulse = pulselen;
     }
