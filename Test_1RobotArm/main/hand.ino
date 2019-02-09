@@ -12,7 +12,7 @@ void closeHand()
     handAnglePulse = pulselen;
   }
 
-  delay(1000);
+  delay(500);
 }
 
 void openHand() 
@@ -31,7 +31,6 @@ void takingCupHand()
   for (uint16_t pulselen = handAnglePulse; pulselen < SERVOMIN_HAND + 60; pulselen++) {
     pwm.setPWM(HAND_PIN, 0, pulselen);
     handAnglePulse = pulselen;
+    delay(10);
   }
-
-  delay(1000);
 }

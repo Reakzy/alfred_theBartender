@@ -26,7 +26,7 @@ void downForearm()
     forearmAnglePulse = pulselen;
   }
   
-  delay(1000);
+  delay(500);
 }
 
 void upDegresForearm(uint16_t degres)
@@ -34,12 +34,6 @@ void upDegresForearm(uint16_t degres)
   uint16_t difference = SERVOMAX_FOREARM - SERVOMIN_FOREARM;
   uint16_t pulselenDegres = (degres * difference / 180) + forearmAnglePulse;
 
-  Serial.println(degres);
-  Serial.println(SERVOMAX_ELBOW);
-  Serial.println(SERVOMIN_ELBOW);
-  Serial.println(difference);
-  Serial.println(pulselenDegres);
-  Serial.println(elbowAnglePulse);
   if (pulselenDegres > SERVOMAX_FOREARM) {    
     pulselenDegres = SERVOMAX_FOREARM;
   }
@@ -47,7 +41,26 @@ void upDegresForearm(uint16_t degres)
   for (uint16_t pulselen = forearmAnglePulse; pulselen < pulselenDegres; pulselen++) {
     pwm.setPWM(FOREARM_PIN, 0, pulselen);
     forearmAnglePulse = pulselen;
+    delay(10);
   }
   
-  delay(2000);
+  delay(500);
+}
+
+void downDegresForearm(uint16_t degres)
+{
+  uint16_t difference = SERVOMAX_FOREARM - SERVOMIN_FOREARM;
+  uint16_t pulselenDegres = forearmAnglePulse - (degres * difference / 180);
+
+  if (pulselenDegres < SERVOMIN_FOREARM) {    
+    pulselenDegres = SERVOMIN_FOREARM;
+  }
+
+  for (uint16_t pulselen = forearmAnglePulse; pulselen > pulselenDegres; pulselen--) {
+    pwm.setPWM(FOREARM_PIN, 0, pulselen);
+    forearmAnglePulse = pulselen;
+    delay(10);
+  }
+  
+  delay(500);
 }

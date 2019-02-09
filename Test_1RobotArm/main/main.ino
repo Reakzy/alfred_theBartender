@@ -45,11 +45,11 @@ void setup() {
   pwm.setPWMFreq(60);  // Analog servos run at ~60 Hz updates
 
   setupArm();
-  delay(1000);
-  takeCup();
+  //takeCup();
 }
 
 void loop() {
+  takeCup();
   /*openHand();
   delay(1000);
   closeHand();

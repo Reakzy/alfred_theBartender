@@ -14,7 +14,7 @@ void frontBody()
     bodyAnglePulse = pulselen;
   }
   
-  delay(1000);
+  delay(500);
 }
 
 // Turn at 180°

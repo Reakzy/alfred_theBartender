@@ -15,7 +15,7 @@ void leftWrist()
     wristAnglePulse = pulselen;
   }
   
-  delay(1000);
+  delay(500);
 }
 
 // Turn at 180°

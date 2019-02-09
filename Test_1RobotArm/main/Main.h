@@ -4,12 +4,12 @@
 #include <Wire.h>
 #include <Adafruit_PWMServoDriver.h>
 
-#define SERVOMIN_BODY  150 // this is the 'minimum' pulse length count (out of 4096)
+#define SERVOMIN_BODY  149 // this is the 'minimum' pulse length count (out of 4096)
 #define SERVOMAX_BODY  600 // this is the 'maximum' pulse length count (out of 4096)
 #define BODY_PIN 0
 uint16_t bodyAnglePulse = SERVOMAX_BODY;
 
-#define SERVOMIN_ELBOW  180 // this is the 'minimum' pulse length count (out of 4096)
+#define SERVOMIN_ELBOW  170 // this is the 'minimum' pulse length count (out of 4096)
 #define SERVOMAX_ELBOW  550 // this is the 'maximum' pulse length count (out of 4096)
 #define ELBOW_PIN 2
 uint16_t elbowAnglePulse = SERVOMAX_ELBOW;

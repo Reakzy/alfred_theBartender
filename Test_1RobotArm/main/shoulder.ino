@@ -15,7 +15,7 @@ void upShoulder()
     shoulderAnglePulse = pulselen;
   }
   
-  delay(1000);
+  delay(500);
 }
 
 // Turn at 100° because with more he can't stand up
