@@ -56,13 +56,13 @@ void moveForwardUp()
       delay(5);
       pulselenElbow++;
 
-      pwm.setPWM(FOREARM_PIN, 0, pulselenForearm);
+      /*pwm.setPWM(FOREARM_PIN, 0, pulselenForearm);
       forearmAnglePulse = pulselenForearm;
       delay(5);
       pulselenForearm++;
       if (pulselenForearm > SERVOMAX_FOREARM) {
         pulselenForearm = SERVOMAX_FOREARM;
-      }
+      }*/
     }
 
   delay(500);
@@ -152,7 +152,7 @@ void takeCup()
 
   downDegresElbow(25);
   moveForwardUp();
-  upDegresElbow(100);
+  upDegresElbow(30);
   moveBackwardDown();
 
   initForearm();
